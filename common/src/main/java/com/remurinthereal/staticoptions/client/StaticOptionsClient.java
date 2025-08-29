@@ -18,7 +18,7 @@ public final class StaticOptionsClient {
             return;
         }
 
-        StaticOptions.LOGGER.warn("Unsupported Operating System for Static Options.");
+        StaticOptions.LOGGER.warn("Unsupported Operating System for Static Options as STATIC_OPTIONS_PATH is null.");
     }
 
     public static String getDefaultStaticOptionsPath() {
