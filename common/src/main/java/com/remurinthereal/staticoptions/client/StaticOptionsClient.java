@@ -4,32 +4,24 @@ import com.remurinthereal.staticoptions.StaticOptions;
 import org.lwjgl.system.Platform;
 
 public final class StaticOptionsClient {
-    public static final String STATIC_OPTIONS_PATH;
+    private static String defaultStaticOptionsPath = null;
 
     public static void init() {
+        switch (StaticOptions.OS) {
+            case WINDOWS -> defaultStaticOptionsPath = System.getenv("APPDATA") + "\\.minecraft";
+            case OSX -> defaultStaticOptionsPath = System.getProperty("user.home") + "\\Library\\Application Support\\minecraft";
+            case LINUX, SOLARIS  -> defaultStaticOptionsPath = System.getProperty("user.home") + "\\.minecraft";
+        }
 
+        if (defaultStaticOptionsPath != null) {
+            StaticOptions.LOGGER.info("Default Static Options path for {} is {}.", StaticOptions.OS, defaultStaticOptionsPath);
+            return;
+        }
+
+        StaticOptions.LOGGER.warn("Unsupported Operating System for Static Options.");
     }
 
-    static {
-        Platform operatingSystem = Platform.get();
-        switch (operatingSystem) {
-            case WINDOWS:
-                STATIC_OPTIONS_PATH = System.getenv("APPDATA") + "\\.minecraft";
-                break;
-            case MACOSX:
-                STATIC_OPTIONS_PATH = System.getProperty("user.home") + "\\Library\\Application Support\\minecraft";
-                break;
-            case LINUX:
-                STATIC_OPTIONS_PATH = System.getProperty("user.home") + "\\.config\\.minecraft";
-                break;
-            default:
-                STATIC_OPTIONS_PATH = null;
-        }
-
-        if (STATIC_OPTIONS_PATH != null) {
-            StaticOptions.LOGGER.info("Static Options path for {} is {}.", operatingSystem, STATIC_OPTIONS_PATH);
-        } else {
-            StaticOptions.LOGGER.warn("Unsupported Operating System for Static Options.");
-        }
+    public static String getDefaultStaticOptionsPath() {
+        return defaultStaticOptionsPath;
     }
 }

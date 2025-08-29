@@ -24,7 +24,7 @@ modId = "minecraft"
 ordering = "NONE"
 side = "BOTH"
 mandatory = true
-versionRange = "[1.20.2,)"
+versionRange = "[1.21.5,)"
 
 [[mixins]]
 config = "${mod_id}.mixins.json"
