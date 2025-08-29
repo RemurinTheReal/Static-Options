@@ -3,6 +3,7 @@ loaderVersion = "[25,)"
 
 issueTrackerURL = "${mod_issues_url}"
 license = "${mod_license}"
+clientSideOnly = true
 
 [[mods]]
 authors = "${mod_authors}"
@@ -11,6 +12,7 @@ displayName = "${mod_name}"
 logoFile = "icon.png"
 modId = "${mod_id}"
 version = "${mod_version}"
+displayTest = "NONE"
 
 [[dependencies.${mod_id}]]
 modId = "forge"
