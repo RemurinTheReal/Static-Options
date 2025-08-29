@@ -21,7 +21,7 @@ public final class StaticOptionsClient {
                 STATIC_OPTIONS_PATH = System.getProperty("user.home") + "\\Library\\Application Support\\minecraft";
                 break;
             case LINUX:
-                STATIC_OPTIONS_PATH = System.getProperty("user.home") + "\\.config\\.minecraft";
+                STATIC_OPTIONS_PATH = System.getProperty("user.home") + "\\.minecraft";
                 break;
             default:
                 STATIC_OPTIONS_PATH = null;
