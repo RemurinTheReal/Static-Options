@@ -29,7 +29,7 @@ public final class StaticOptionsClient {
         if (STATIC_OPTIONS_PATH != null) {
             StaticOptions.LOGGER.info("Static Options path for {} is {}.", operatingSystem, STATIC_OPTIONS_PATH);
         } else {
-            StaticOptions.LOGGER.warn("Unsupported Operating System for Static Options.");
+            StaticOptions.LOGGER.warn("Unsupported Operating System for Static Options as STATIC_OPTIONS_PATH is null.");
         }
     }
 }

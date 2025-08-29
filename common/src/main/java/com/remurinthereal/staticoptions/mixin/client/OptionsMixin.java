@@ -19,6 +19,7 @@ public class OptionsMixin {
             return new File(STATIC_OPTIONS_PATH, child);
         }
 
+        StaticOptions.LOGGER.warn("Failed to redirect options.txt file creation.");
         return new File(parent, child);
     }
 }
