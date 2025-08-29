@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "com.remurinthereal.staticoptions.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "minVersion": "0.8",
+  "client": [
+    "client.OptionsMixin"
+  ],
+  "mixins": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

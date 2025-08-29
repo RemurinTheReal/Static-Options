@@ -1,0 +1,69 @@
+plugins {
+    id 'com.gradleup.shadow'
+}
+
+architectury {
+    platformSetupLoomIde()
+    fabric()
+}
+
+configurations {
+    common {
+        canBeResolved = true
+        canBeConsumed = false
+    }
+    compileClasspath.extendsFrom common
+    runtimeClasspath.extendsFrom common
+    developmentFabric.extendsFrom common
+
+    shadowBundle {
+        canBeResolved = true
+        canBeConsumed = false
+    }
+}
+
+dependencies {
+    modImplementation "net.fabricmc:fabric-loader:$rootProject.fabric_loader_version"
+
+    common(project(path: ':common', configuration: 'namedElements')) { transitive = false }
+    shadowBundle project(path: ':common', configuration: 'transformProductionFabric')
+}
+
+processResources {
+    inputs.property 'fabric_loader_version', rootProject.fabric_loader_version
+    inputs.property 'minecraft_version', rootProject.minecraft_version
+    inputs.property 'java_version', rootProject.java_version
+    inputs.property 'mod_description', rootProject.mod_description
+    inputs.property 'mod_id', rootProject.mod_id
+    inputs.property 'mod_license', rootProject.mod_license
+    inputs.property 'mod_name', rootProject.mod_name
+    inputs.property 'mod_sources_url', rootProject.mod_sources_url
+    inputs.property 'mod_issues_url', rootProject.mod_issues_url
+    inputs.property 'mod_url', rootProject.mod_url
+    inputs.property 'mod_version', rootProject.mod_version
+
+    filesMatching('fabric.mod.json') {
+        expand(
+                fabric_loader_version: inputs.properties.fabric_loader_version,
+                minecraft_version: inputs.properties.minecraft_version,
+                java_version: inputs.properties.java_version,
+                mod_description: inputs.properties.mod_description,
+                mod_id: inputs.properties.mod_id,
+                mod_license: inputs.properties.mod_license,
+                mod_name: inputs.properties.mod_name,
+                mod_sources_url: inputs.properties.mod_sources_url,
+                mod_issues_url: inputs.properties.mod_issues_url,
+                mod_url: inputs.properties.mod_url,
+                mod_version: inputs.properties.mod_version
+        )
+    }
+}
+
+shadowJar {
+    configurations = [project.configurations.shadowBundle]
+    archiveClassifier = 'dev-shadow'
+}
+
+remapJar {
+    inputFile.set shadowJar.archiveFile
+}
