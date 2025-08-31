@@ -24,6 +24,7 @@ public final class StaticOptionsClient {
             case LINUX:
                 STATIC_OPTIONS_PATH = System.getProperty("user.home") + "\\.minecraft";
                 break;
+            case UNKNOWN:
             default:
                 STATIC_OPTIONS_PATH = null;
         }
