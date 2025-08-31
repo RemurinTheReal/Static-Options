@@ -20,6 +20,7 @@ public final class StaticOptionsClient {
             case OSX:
                 STATIC_OPTIONS_PATH = System.getProperty("user.home") + "\\Library\\Application Support\\minecraft";
                 break;
+            case SOLARIS:
             case LINUX:
                 STATIC_OPTIONS_PATH = System.getProperty("user.home") + "\\.minecraft";
                 break;
