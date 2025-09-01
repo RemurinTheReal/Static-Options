@@ -1,17 +1,15 @@
 package com.remurinthereal.staticoptions.client;
 
 import com.remurinthereal.staticoptions.StaticOptions;
-import com.remurinthereal.staticoptions.StaticOptionsUtil;
+import com.remurinthereal.staticoptions.Util;
 
 public final class StaticOptionsClient {
     public static final String STATIC_OPTIONS_PATH;
 
-    public static void init() {
-
-    }
+    public static void init() {}
 
     static {
-        StaticOptionsUtil.OS operatingSystem = StaticOptionsUtil.getPlatform();
+        Util.OS operatingSystem = Util.getPlatform();
         switch (operatingSystem) {
             case WINDOWS:
                 STATIC_OPTIONS_PATH = System.getenv("APPDATA") + "\\.minecraft";

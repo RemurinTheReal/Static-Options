@@ -2,7 +2,7 @@ package com.remurinthereal.staticoptions;
 
 import java.util.Locale;
 
-public final class StaticOptionsUtil {
+public final class Util {
     public static OS getPlatform() {
         String string = System.getProperty("os.name").toLowerCase(Locale.ROOT);
         if (string.contains("win")) {
