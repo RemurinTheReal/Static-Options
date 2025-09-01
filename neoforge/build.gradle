@@ -45,7 +45,7 @@ processResources {
     inputs.property 'mod_name', rootProject.mod_name
     inputs.property 'mod_issues_url', rootProject.mod_issues_url
     inputs.property 'mod_version', rootProject.mod_version
-    inputs.property 'neoforge_version', rootProject.forge_version
+    inputs.property 'neoforge_version', rootProject.neoforge_version
 
     filesMatching('META-INF/neoforge.mods.toml') {
         expand(
