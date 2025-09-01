@@ -2,14 +2,11 @@ package com.remurinthereal.staticoptions.client;
 
 import com.remurinthereal.staticoptions.StaticOptions;
 import net.minecraft.Util;
-import org.lwjgl.system.Platform;
 
 public final class StaticOptionsClient {
     public static final String STATIC_OPTIONS_PATH;
 
-    public static void init() {
-
-    }
+    public static void init() {}
 
     static {
         Util.OS operatingSystem = Util.getPlatform();
