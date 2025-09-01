@@ -6,8 +6,6 @@
   "client": [
     "client.OptionsMixin"
   ],
-  "mixins": [
-  ],
   "injectors": {
     "defaultRequire": 1
   }
