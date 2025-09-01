@@ -1,12 +1,10 @@
 {
   "required": true,
   "package": "com.remurinthereal.staticoptions.mixin",
-  "compatibilityLevel": "JAVA_8",
+  "compatibilityLevel": "JAVA_21",
   "minVersion": "0.8",
   "client": [
     "client.MinecraftMixin"
-  ],
-  "mixins": [
   ],
   "injectors": {
     "defaultRequire": 1

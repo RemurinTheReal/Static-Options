@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "[1,)"
+loaderVersion = "[4,)"
 
 issueTrackerURL = "${mod_issues_url}"
 license = "${mod_license}"
@@ -16,14 +16,14 @@ version = "${mod_version}"
 modId = "neoforge"
 ordering = "NONE"
 side = "BOTH"
-mandatory = true
-versionRange = "[1,)"
+type = "required"
+versionRange = "[4,)"
 
 [[dependencies.${mod_id}]]
 modId = "minecraft"
 ordering = "NONE"
 side = "BOTH"
-mandatory = true
+type = "required"
 versionRange = "[1.21,)"
 
 [[mixins]]

@@ -6,9 +6,7 @@ import net.minecraft.Util;
 public final class StaticOptionsClient {
     public static final String STATIC_OPTIONS_PATH;
 
-    public static void init() {
-
-    }
+    public static void init() {}
 
     static {
         Util.OS operatingSystem = Util.getPlatform();
@@ -31,7 +29,7 @@ public final class StaticOptionsClient {
         if (STATIC_OPTIONS_PATH != null) {
             StaticOptions.LOGGER.info("Static Options path for {} is {}.", operatingSystem, STATIC_OPTIONS_PATH);
         } else {
-            StaticOptions.LOGGER.warn("Unsupported Operating System for Static Options.");
+            StaticOptions.LOGGER.warn("Unsupported Operating System for Static Options as STATIC_OPTIONS_PATH is null.");
         }
     }
 }
