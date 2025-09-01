@@ -11,5 +11,4 @@ rootProject.name = 'Static-Options'
 
 include 'common'
 include 'fabric'
-include 'forge'
 include 'neoforge'

@@ -16,15 +16,15 @@ version = "${mod_version}"
 modId = "neoforge"
 ordering = "NONE"
 side = "BOTH"
-mandatory = true
+type = "required"
 versionRange = "[1,)"
 
 [[dependencies.${mod_id}]]
 modId = "minecraft"
 ordering = "NONE"
 side = "BOTH"
-mandatory = true
-versionRange = "[1.20.2,)"
+type = "required"
+versionRange = "[1.20.5,)"
 
 [[mixins]]
 config = "${mod_id}.mixins.json"
