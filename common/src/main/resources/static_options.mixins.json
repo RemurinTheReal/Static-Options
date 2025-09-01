@@ -5,7 +5,7 @@
   "minVersion": "0.8",
   "client": [
     "client.MinecraftMixin"
-  ]
+  ],
   "injectors": {
     "defaultRequire": 1
   }
